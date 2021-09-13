@@ -16,7 +16,6 @@ public class Email {
         System.out.println("DEPARTEMENT\t:" + this.departement);
         this.password = randomPassword(passwordLength);
         System.out.println("PASSWORD\t:" + this.password);
-        this.
     }
     public String setDepartement(){
         System.out.println("SELECT DEPARTEMENT\t:\n1.SALES\n2.DEVELOPMENT\n3.ASSISTANT\n0.NONE");
