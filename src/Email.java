@@ -5,17 +5,16 @@ public class Email {
     private String lastname;
     private String departement;
     private int passwordLength = 10;
-    private int mailboxCapacity = 0;
+    private int mailboxCapacity ;
+    private String alternateEmail;
     private String password;
 
     public Email(String firstname, String lastname){
         this.firstname = firstname;
         this.lastname = lastname;
-        System.out.println("EMAIL CREATED\t: " + this.firstname + " " + this.lastname );
+        System.out.println("ACCOUNT\t: " + this.firstname + " " + this.lastname );
         this.departement = setDepartement();
-        System.out.println("DEPARTEMENT\t:" + this.departement);
         this.password = randomPassword(passwordLength);
-        System.out.println("PASSWORD\t:" + this.password);
     }
     public String setDepartement(){
         System.out.println("SELECT DEPARTEMENT\t:\n1.SALES\n2.DEVELOPMENT\n3.ASSISTANT\n0.NONE");
@@ -41,5 +40,40 @@ public class Email {
         return new String(password);
 
     }
-    
+
+    public int getMailboxCapacity() {
+        return mailboxCapacity;
+    }
+
+    public void setMailboxCapacity(int mailboxCapacity) {
+        this.mailboxCapacity = mailboxCapacity;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAlternateEmail() {
+        return alternateEmail;
+    }
+
+    public void setAlternateEmail(String alternateEmail) {
+        this.alternateEmail = alternateEmail;
+    }
+
+    public String showInfo() {
+        return "FIRST NAME\t\t\t: " + this.firstname +
+                "\nLAST NAME\t\t\t: " + this.lastname +
+                "\nDEPARTEMENT\t\t\t: " +this.departement +
+                "\nEMAIL\t\t\t\t: " + this.firstname + "_" + this.lastname + "@company.com" +
+                "\nPASSWORD\t\t\t: " + this.password +
+                "\nMAILBOX CAPACITY\t: " +this.mailboxCapacity +"mb";
+    }
+    public void display(){
+        System.out.println(showInfo());
+    }
 }
